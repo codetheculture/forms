@@ -2,9 +2,9 @@
 
 namespace CodeTheCulture\Forms\Tests;
 
+use CodeTheCulture\Forms\FormsServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use CodeTheCulture\Forms\FormsServiceProvider;
 
 class TestCase extends Orchestra
 {
