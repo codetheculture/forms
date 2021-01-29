@@ -1,19 +1,11 @@
 # Opinionated Tailwind Forms for Laravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/codetheculture/forms.svg?style=flat-square)](https://packagist.org/packages/codetheculture/forms)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/codetheculture/forms/run-tests?label=tests)](https://github.com/codetheculture/forms/actions?query=workflow%3ATests+branch%3Amaster)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/codetheculture/forms/run-tests?label=tests)](https://github.com/codetheculture/forms/actions?query=workflow%3ATests+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/codetheculture/forms.svg?style=flat-square)](https://packagist.org/packages/codetheculture/forms)
 
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/package-forms-laravel.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/package-forms-laravel)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
 
 ## Installation
 
@@ -23,14 +15,8 @@ You can install the package via composer:
 composer require codetheculture/forms
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --provider="CodeTheCulture\Forms\FormsServiceProvider" --tag="forms-migrations"
-php artisan migrate
-```
-
 You can publish the config file with:
+
 ```bash
 php artisan vendor:publish --provider="CodeTheCulture\Forms\FormsServiceProvider" --tag="forms-config"
 ```
@@ -39,14 +25,17 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'classes' => [
+        'text' => 'block w-full mt-1 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm',
+        'text_error' => 'block w-full mt-1 border-red-500 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm',
+    ],
 ];
 ```
 
 ## Usage
 
-```php
-$forms = new CodeTheCulture\Forms();
-echo $forms->echoPhrase('Hello, CodeTheCulture!');
+```html
+<x-culture-text name="name" :value="$user->name" required autocomplete="name" />
 ```
 
 ## Testing
