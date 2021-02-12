@@ -1,1 +1,1 @@
-<x-culture-text name="username" value="johndoe" />
+<x-culture-text name="username"/>
